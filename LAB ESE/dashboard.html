@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f1f5f9;
+      color: #333;
+    }
+
+    .dashboard {
+      display: flex;
+      height: 100vh;
+    }
+
+    .sidebar {
+      width: 240px;
+      background: linear-gradient(135deg, #74ebd5, #acb6e5);
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .sidebar h2 {
+      color: #fff;
+      font-size: 22px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .sidebar a {
+      display: block;
+      margin: 15px 0;
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .sidebar a:hover {
+      transform: translateX(5px);
+    }
+
+    .topbar {
+      background: #fff;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .main-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content-area {
+      padding: 30px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #444;
+    }
+
+    .logout-btn {
+      padding: 10px 15px;
+      background: #ff5252;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .logout-btn:hover {
+      background: #e53935;
+    }
+
+    @media (max-width: 768px) {
+      .dashboard {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        flex-direction: row;
+        overflow-x: auto;
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .sidebar h2 {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="dashboard">
+  <div class="sidebar">
+    <div>
+      <h2>🌐 Dashboard</h2>
+      <a href="#">Home</a>
+      <a href="#">Analytics</a>
+      <a href="#">Profile</a>
+      <a href="#">Settings</a>
+    </div>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </div>
+
+  <div class="main-content">
+    <div class="topbar">
+      <h2>Welcome, User!</h2>
+      <div>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+      </div>
+    </div>
+    <div class="content-area">
+      <div class="card">
+        <h3>Overview</h3>
+        <p>This dashboard can be customized for any type of application or user system. You can integrate charts, tables, user data, and more here.</p>
+      </div>
+
+      <div class="card">
+        <h3>Quick Stats</h3>
+        <ul>
+          <li>👤 Users: 1,204</li>
+          <li>📄 Documents: 584</li>
+          <li>⚙️ Tasks Completed: 93%</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function logout() {
+    // You can replace this with a real logout API call
+    alert("Logging out...");
+    window.location.href = "/login";
+  }
+</script>
+
+</body>
+</html>
